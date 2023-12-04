@@ -87,21 +87,3 @@ void print_string(String* string) {
 char last_char_of_string(String* string) {
     return string->content[string->size-1];
 }
-
-int main() {
-    String* string = initialize_string('A');
-    append_to_string(string, 'h');
-    append_to_string(string, 'o');
-    append_to_string(string, 'j');
-    append_to_string(string, 'k');
-    append_to_string(string, 'y');
-    print_string(string);
-
-    printf("%c\n", last_char_of_string(string));
-
-    realloc_string(string);
-
-    free_string(string);
-
-    return 0;
-}
