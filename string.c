@@ -34,6 +34,13 @@ void append_to_string(String* string, char c) {
     string->content[string->size] = '\0';
 }
 
+void realloc_string(String* string) {
+    string->max_size = string->size;
+    char* new_content = realloc(string->content, (string->max_size + 1) * sizeof(char));
+    string->content = new_content;
+    string->content[string->size] = '\0';
+}
+
 void free_string(String* string) {
     free(string->content);
     free(string);
@@ -46,6 +53,10 @@ void print_string(String* string) {
     printf("\n");
 }
 
+char last_char_of_string(String* string) {
+    return string->content[string->size-1];
+}
+
 int main() {
     String* string = initialize_string('A');
     append_to_string(string, 'h');
@@ -54,6 +65,11 @@ int main() {
     append_to_string(string, 'k');
     append_to_string(string, 'y');
     print_string(string);
+
+    printf("%c\n", last_char_of_string(string));
+
+    realloc_string(string);
+
     free_string(string);
 
     return 0;
