@@ -4,5 +4,6 @@ Repository, containing various projects, structures, functions and programs that
 
 ## Current code snippets:
 
+- [Array of custom structures](/array_of_structs/)
 - [Date utility functions](/date)
 - [String implementation](/string)
