@@ -4,12 +4,13 @@
 const int STRING_INITIAL_SIZE = 4;
 
 /// @brief Structure representing a string.
-/// @param content Pointer to the string's real content.
-/// @param size The current size of the string.
-/// @param max_size The maximum size the string can hold. Can be dynamically grown. 
 typedef struct String {
+    /// @brief The string's real character content.
     char* content;
+    /// @brief The current size of the string.
     size_t size;
+    /// @brief The maximum size of the string.
+    /// @details Should be dynamically grown when needed.
     size_t max_size;
 } String;
 
